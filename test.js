@@ -38,3 +38,10 @@ it('Test is indicating failure when a string is used instead of a number', () =>
 it('Test is successfully running when two numbers are used', () => {
     assert.equal(operations.validateNumbers(10, 5), true)
 })
+
+
+
+
+
+
+// Reference: https://www.taniarascia.com/unit-testing-in-javascript/
