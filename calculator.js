@@ -7,29 +7,21 @@ const rl = readline.createInterface({
     output: process.stdout,
 })
 
-console.log(`
-Calc.js
+console.log("Welcome to calculator testing with mocha")
 
-Welcome to the Node.js Calculator app! 
-Version: 1.0.0.
-
-Usage: The user will be prompted for two numbers, 
-then asked to select their operation of choice.
-`)
-
-rl.question('Enter the first number: ', (x) => {
-    rl.question('Enter the second number: ', (y) => {
+rl.question('Enter first number: ', (x) => {
+    rl.question('Enter second number: ', (y) => {
         rl.question(
             `
-      Please select from the following options:
+      Please choose from the following options:
       [1] Addition (+)
       [2] Subtraction (-)
       [3] Multiplication (*)
       [4] Division (/)
-      Enter your choice: `,
+      Enter the operation: `,
             (choice) => {
                 if (!operations.validateNumbers(x, y)) {
-                    console.log('Only numbers are allowed! Please restart the program.')
+                    console.log('You have entered non-number values! Please restart the program.')
                 } else {
                     switch (choice) {
                         case '1':
@@ -39,10 +31,7 @@ rl.question('Enter the first number: ', (x) => {
                             break
                         case '2':
                             console.log(
-                                `The difference of ${x} and ${y} is ${operations.subtract(
-                    x,
-                    y
-                  )}.`
+                                `The difference of ${x} and ${y} is ${operations.subtract(x,y)}.`
                             )
                             break
                         case '3':
@@ -57,7 +46,7 @@ rl.question('Enter the first number: ', (x) => {
                             break
                         default:
                             console.log(
-                                'Please restart the program and select a number between 1 and 4.'
+                                'Please choose a number from 1-4.'
                             )
                             break
                     }
